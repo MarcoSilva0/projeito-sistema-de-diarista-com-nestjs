@@ -1,4 +1,7 @@
 import { Module } from '@nestjs/common';
+import { DiaristaController } from './diarista.controller';
 
-@Module({})
+@Module({
+  controllers: [DiaristaController],
+})
 export class DiaristaModule {}
