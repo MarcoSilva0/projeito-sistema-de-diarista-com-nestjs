@@ -1,9 +1,18 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param, Render } from '@nestjs/common';
 
 @Controller('diarista')
 export class DiaristaController {
-  @Get()
-  root() {
-    return 'Exemplo de rota GET';
+  @Get(':id')
+  @Render('home')
+  root(@Param('id') id: number) {
+    const diarista = [
+      {
+        nome: 'Paulo',
+      },
+      {
+        nome: 'Bruna',
+      },
+    ];
+    return { diarista: diarista[id] };
   }
 }
