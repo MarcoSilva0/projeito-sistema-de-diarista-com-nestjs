@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { DiaristaModule } from './diarista/diarista.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Diarista } from './diarista/diarista.entity';
 
 @Module({
   imports: [
@@ -12,7 +13,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: 'root',
       password: '123456a',
       database: 'curso-nestjs',
-      entities: [],
+      entities: [Diarista],
       synchronize: true,
     }),
   ],
