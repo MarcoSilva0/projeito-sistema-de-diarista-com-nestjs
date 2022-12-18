@@ -3,13 +3,12 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Diarista } from './diarista.entity';
 
-@Controller('diarista')
+@Controller('diaristas')
 export class DiaristaController {
   constructor(
     @InjectRepository(Diarista)
     private diaristaRepository: Repository<Diarista>,
   ) {}
-
   @Get()
   @Render('listar_diarista')
   async listarDiarista() {
